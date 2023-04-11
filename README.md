@@ -1,6 +1,6 @@
 # IegTools.SemanticTypes
 
-IegTools.SemanticTypes is a library that offers a minimalist collection of base classes and type implementations, which can be used to describe the meaning of a value.
+IegTools.SemanticTypes is a library that offers a minimalist collection of base classes and some type-implementations, which can be used to describe the meaning of a value.
 
 
 ## Why?
