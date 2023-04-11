@@ -2,8 +2,16 @@ namespace UnitTests.SemanticTypes.Money;
 
 using IegTools.SemanticTypes;
 
-public class NetPriceOperationsTests
+public class NetPriceTests
 {
+    [Fact]
+    public void Test_default()
+    {
+        var actual = new NetPrice();
+
+        actual.Value.Should().Be(0);
+    }
+
     [Fact]
     public void Test_Add_Vat()
     {

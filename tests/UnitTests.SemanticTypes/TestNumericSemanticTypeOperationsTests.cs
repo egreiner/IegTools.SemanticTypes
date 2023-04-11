@@ -1,3 +1,5 @@
+using UnitTests.SemanticTypes.TestTypes;
+
 namespace UnitTests.SemanticTypes;
 
 public class TestNumericSemanticTypeOperationsTests

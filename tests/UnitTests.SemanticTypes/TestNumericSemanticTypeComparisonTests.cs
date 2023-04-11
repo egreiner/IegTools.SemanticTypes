@@ -1,5 +1,7 @@
 namespace UnitTests.SemanticTypes;
 
+using TestTypes;
+
 public class TestNumericSemanticTypeComparisonTests
 {
     [Theory]

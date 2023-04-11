@@ -2,8 +2,16 @@ namespace UnitTests.SemanticTypes.Money;
 
 using IegTools.SemanticTypes;
 
-public class GrossPriceOperationsTests
+public class GrossPriceTests
 {
+    [Fact]
+    public void Test_default()
+    {
+        var actual = new GrossPrice();
+
+        actual.Value.Should().Be(0);
+    }
+
     [Fact]
     public void Test_Sub_Vat()
     {

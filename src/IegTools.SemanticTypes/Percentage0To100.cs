@@ -2,6 +2,9 @@
 
 using System;
 
+/// <summary>
+/// Represents an percentage value between 0.0% and 100.0%
+/// </summary>
 public class Percentage0To100 : Percentage
 {
     public Percentage0To100() : this(0) { }
@@ -26,27 +29,32 @@ public class Percentage0To100 : Percentage
         new(value.LimitTo(0, 100));
 
 
-
     /// <summary>
-    /// Performs an implicit conversion from <see cref="double" /> to <see cref="Percentage0To100" />.
+    /// Adds the value to the current value and returns the result as auto-limited Percentage0To100.
     /// </summary>
-    /// <param name="value">The value.</param>
-    /// <returns>The result of the conversion.</returns>
-    public static implicit operator Percentage0To100(double value) =>
-        CreateAutoLimited(value);
-
-
-
+    /// <param name="value">The second value to add</param>
     public Percentage0To100 Add(Percentage0To100 value)
         => CreateAutoLimited(Value + value.Value);
 
+    /// <summary>
+    /// Subtracts the value from the current value and returns the result as auto-limited Percentage0To100.
+    /// </summary>
+    /// <param name="value">The second value to subtract</param>
     public Percentage0To100 Sub(Percentage0To100 value)
         => CreateAutoLimited(Value - value.Value);
 
 
+    /// <summary>
+    /// Multiplies the value with the current value and returns the result as auto-limited Percentage0To100.
+    /// </summary>
+    /// <param name="multiplicator">The multiplicator value</param>
     public Percentage0To100 Multiply(double multiplicator)
         => CreateAutoLimited(Value * multiplicator);
 
+    /// <summary>
+    /// Divides the current value with the divisor and returns the result as auto-limited Percentage0To100.
+    /// </summary>
+    /// <param name="divisor">The divisor value</param>
     public Percentage0To100 Divide(double divisor)
         => CreateAutoLimited(Value / divisor);
 }

@@ -1,4 +1,4 @@
-namespace UnitTests.SemanticTypes;
+namespace UnitTests.SemanticTypes.TestTypes;
 
 using IegTools.SemanticTypes.Core;
 
