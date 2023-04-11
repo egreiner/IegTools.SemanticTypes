@@ -28,11 +28,13 @@
 		
 		<NeutralLanguage>en</NeutralLanguage>
 		<RepositoryType>git</RepositoryType>
+		<UserSecretsId>940bf605-ef83-43f5-9f75-715291de7535</UserSecretsId>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 
 	</PropertyGroup>
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
   </ItemGroup>
 
 	<ItemGroup>
