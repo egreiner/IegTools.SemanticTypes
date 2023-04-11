@@ -1,0 +1,11 @@
+# PowerShell commands to create NuGet packages
+dotnet pack .\src\IegTools.SemanticTypes\IegTools.SemanticTypes.csproj --configuration Release
+dotnet pack .\src\IegTools.SemanticTypes\IegTools.SemanticTypes.csproj --include-symbols --configuration Release
+
+# push all created packages to local folder
+# https://docs.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-init 
+nuget init .\src\IegTools.SemanticTypes\bin\Release D:\NuGet
+
+# Push to NuGet.org
+dotnet nuget push .\src\IegTools.SemanticTypes\bin\Release\*.nupkg -s https://api.nuget.org/v3/index.json -k < your NuGet API_KEY >
+
