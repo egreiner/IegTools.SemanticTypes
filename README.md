@@ -1,25 +1,25 @@
 # IegTools.SemanticTypes
 
-IegTools.SemanticTypes is a library that provides a minimalistic set of base classes and some implementations 
- of types that can be used to describe the semantics of a value.
+IegTools.SemanticTypes is a library that offers a minimalist collection of base classes and type implementations, which can be used to describe the meaning of a value.
 
 
 ## Why?
-I need this for some other open sourced NuGet packages and internal projects.
-Feel free to take a look at the source code and use it in your projects.  
+I created this library for usage in other open-source NuGet packages and internal projects.
+Please feel free to examine the source code and use it in your projects.  
 
-The focus was on simplicity of the base classes.
-I tried to keep the code as simple as possible to avoid unnecessary confusion.
+The primary focus was to keep the base classes as simple as possible to prevent any unnecessary confusion.
 
-## What's included at the moment?
-- base class SemanticType
-- base class NumericSemanticType
-- GrossPrice
-- NetPrice
-- Vat
-- Percentage
-- Percentage0to100
 
-## UnitTests
-It's pretty good unittested.  
-You can find the tests in the UnitTests.SemanticTypes project.
+## What's included in the library?
+The library currently contains the following:
+- `SemanticType` base class
+- `NumericSemanticType` base class
+- `GrossPrice`
+- `NetPrice`
+- `Vat`
+- `Percentage`
+- `Percentage0to100`
+
+
+## Unit Testing
+The library has been thoroughly unit tested. The tests are located in the `UnitTests.SemanticTypes` project.
