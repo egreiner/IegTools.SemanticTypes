@@ -5,7 +5,7 @@ using Core;
 /// <summary>
 /// Represents any percentage
 /// </summary>
-public class Percentage : NumericSemanticType<double>
+public record Percentage : NumericSemanticType<double>
 {
     public Percentage() : this(0) { }
 

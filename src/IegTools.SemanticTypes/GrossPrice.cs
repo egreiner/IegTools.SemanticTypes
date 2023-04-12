@@ -2,7 +2,7 @@ namespace IegTools.SemanticTypes;
 
 using Core;
 
-public class GrossPrice : NumericSemanticType<decimal>
+public record GrossPrice : NumericSemanticType<decimal>
 {
     public GrossPrice(): this(0) {  }
 

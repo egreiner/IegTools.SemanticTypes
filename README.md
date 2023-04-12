@@ -1,6 +1,7 @@
 # IegTools.SemanticTypes
 
-IegTools.SemanticTypes is a library that offers a minimalist collection of base classes and some type-implementations, which can be used to describe the meaning of a value.
+IegTools.SemanticTypes is a library that offers a minimalist collection of base classes and some type-implementations,
+which can be used to describe the meaning of a value.
 
 
 ## Why?
@@ -11,9 +12,9 @@ The primary focus was to keep the base classes as simple as possible to prevent 
 
 
 ## What's included in the library?
-The library currently contains the following:
-- `SemanticType` base class
-- `NumericSemanticType` base class
+The library includes the following components:
+- `SemanticType` base class (handles comparison)
+- `NumericSemanticType` base class (handles the basic operations Add(...), Sub(...), Multiply(...) and Division(...))
 - `GrossPrice`
 - `NetPrice`
 - `Vat`
@@ -22,4 +23,5 @@ The library currently contains the following:
 
 
 ## Unit Testing
-The library has been thoroughly unit tested. The tests are located in the `UnitTests.SemanticTypes` project.
+The library has been thoroughly unit tested.
+The tests are located in the project `UnitTests.SemanticTypes`.

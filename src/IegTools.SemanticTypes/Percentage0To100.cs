@@ -5,7 +5,7 @@ using System;
 /// <summary>
 /// Represents an percentage value between 0.0% and 100.0%
 /// </summary>
-public class Percentage0To100 : Percentage
+public record Percentage0To100 : Percentage
 {
     public Percentage0To100() : this(0) { }
 

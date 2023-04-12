@@ -2,7 +2,7 @@ namespace UnitTests.SemanticTypes.TestTypes;
 
 using IegTools.SemanticTypes.Core;
 
-internal class TestNumericSemanticType : NumericSemanticType<double>
+internal record TestNumericSemanticType : NumericSemanticType<double>
 {
     public TestNumericSemanticType() : this(0) { }
 

@@ -2,7 +2,7 @@
 
 using Core;
 
-public class NetPrice : NumericSemanticType<decimal>
+public record NetPrice : NumericSemanticType<decimal>
 {   
     public NetPrice() : this(0) { }
 

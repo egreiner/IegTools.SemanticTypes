@@ -3,7 +3,7 @@
 using System;
 using Core;
 
-public class Vat : NumericSemanticType<decimal>
+public record Vat : NumericSemanticType<decimal>
 {
     public Vat() : this(0) { }
 

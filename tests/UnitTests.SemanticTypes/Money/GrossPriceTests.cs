@@ -12,6 +12,41 @@ public class GrossPriceTests
         actual.Value.Should().Be(0);
     }
 
+
+    [Fact]
+    public void Test_Add()
+    {
+        var actual = new GrossPrice(120).Add(new GrossPrice(20));
+
+        actual.Should().Be(new GrossPrice(140));
+    }
+    
+    [Fact]
+    public void Test_Sub()
+    {
+        var actual = new GrossPrice(120).Sub(new GrossPrice(20));
+
+        actual.Should().Be(new GrossPrice(100));
+    }
+
+    [Fact]
+    public void Test_Multiply()
+    {
+        var actual = new GrossPrice(120).Multiply<GrossPrice>(2.0m);
+
+        actual.Should().Be(new GrossPrice(240));
+    }
+
+    [Fact]
+    public void Test_Divide()
+    {
+        var actual = new GrossPrice(120).Divide<GrossPrice>(2.0m);
+
+        actual.Should().Be(new GrossPrice(60));
+    }
+
+
+
     [Fact]
     public void Test_Sub_Vat()
     {
