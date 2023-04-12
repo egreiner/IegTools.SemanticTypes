@@ -1,20 +1,20 @@
 # IegTools.SemanticTypes
 
-IegTools.SemanticTypes is a library that offers a minimalist collection of base classes and some type-implementations,
-which can be used to describe the meaning of a value.
+IegTools.SemanticTypes is a library that offers a minimalist collection of SemanticTypes,
+based on record(s) instead of classes.
+The library is written in C# 11.0 and targets .NET Standard 2.1.
 
 
 ## Why?
 I created this library for usage in other open-source NuGet packages and internal projects.
 Please feel free to examine the source code and use it in your projects.  
 
-The primary focus was to keep the base classes as simple as possible to prevent any unnecessary confusion.
+The primary focus was to keep the base record(s) as simple as possible.
 
 
 ## What's included in the library?
 The library includes the following components:
-- `SemanticType` base class (handles comparison)
-- `NumericSemanticType` base class (handles the basic operations Add(...), Sub(...), Multiply(...) and Division(...))
+- `SemanticType` base record (handles comparison)
 - `GrossPrice`
 - `NetPrice`
 - `Vat`
