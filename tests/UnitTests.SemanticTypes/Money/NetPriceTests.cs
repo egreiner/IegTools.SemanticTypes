@@ -5,18 +5,9 @@ using IegTools.SemanticTypes;
 public class NetPriceTests
 {
     [Fact]
-    public void Test_default()
-    {
-        var actual = new NetPrice();
-
-        actual.Value.Should().Be(0);
-    }
-
-
-    [Fact]
     public void Test_Add()
     {
-        var actual = new NetPrice(120).Add<NetPrice>(new NetPrice(20));
+        var actual = new NetPrice(120).Add(new NetPrice(20));
 
         actual.Should().Be(new NetPrice(140));
     }
@@ -24,27 +15,26 @@ public class NetPriceTests
     [Fact]
     public void Test_Sub()
     {
-        var actual = new NetPrice(120).Sub(new GrossPrice(20));
+        var actual = new NetPrice(120).Sub(new NetPrice(20));
 
-        actual.Should().Be(new GrossPrice(100));
+        actual.Should().Be(new NetPrice(100));
     }
 
     [Fact]
     public void Test_Multiply()
     {
-        var actual = new GrossPrice(120).Multiply<GrossPrice>(2.0m);
+        var actual = new NetPrice(120).Multiply(2.0m);
 
-        actual.Should().Be(new GrossPrice(240));
+        actual.Should().Be(new NetPrice(240));
     }
 
     [Fact]
     public void Test_Divide()
     {
-        var actual = new GrossPrice(120).Divide<GrossPrice>(2.0m);
+        var actual = new NetPrice(120).Divide(2.0m);
 
-        actual.Should().Be(new GrossPrice(60));
+        actual.Should().Be(new NetPrice(60));
     }
-
 
 
 
@@ -53,7 +43,6 @@ public class NetPriceTests
     {
         var actual = new NetPrice(100).Add(new Vat(20));
 
-        actual.Should().BeOfType<GrossPrice>();
         actual.Should().Be(new GrossPrice(120));
     }
 }

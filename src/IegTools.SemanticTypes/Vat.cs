@@ -1,18 +1,28 @@
 ﻿namespace IegTools.SemanticTypes;
 
 using System;
-using Core;
 
-public record Vat : NumericSemanticType<decimal>
+public record Vat : SemanticType<decimal>
 {
-    public Vat() : this(0) { }
-
     public Vat(decimal value) : base(value)
     {
-        if (!value.IsInRange(0, 100))
-            throw new ArgumentOutOfRangeException(nameof(value), "Must be between 0 and 100");
+        if (value < 0)
+            throw new ArgumentOutOfRangeException(nameof(value), "Must be greater or equal to 0%");
     }
 
 
     public override string ToString() => $"{Value}%";
+
+
+    public Vat Add(Vat value) =>
+        new(Value + value.Value);
+
+    public Vat Sub(Vat value) =>
+        new(Value - value.Value);
+
+    public Vat Multiply(decimal multiplicator) =>
+        new(Value * multiplicator);
+
+    public Vat Divide(decimal divisor) =>
+        new(Value / divisor);
 }

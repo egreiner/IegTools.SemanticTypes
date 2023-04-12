@@ -1,7 +1,6 @@
 ﻿// ReSharper disable once CheckNamespace
 namespace IegTools.SemanticTypes;
 
-using Core;
 using JetBrains.Annotations;
 using System;
 

@@ -1,11 +1,7 @@
 ﻿namespace IegTools.SemanticTypes;
 
-using Core;
-
-public record NetPrice : NumericSemanticType<decimal>
+public record NetPrice : SemanticType<decimal>
 {   
-    public NetPrice() : this(0) { }
-
     public NetPrice(decimal value) : base(value) { }
 
     public NetPrice(GrossPrice grossPrice, Vat vat) :
@@ -16,6 +12,20 @@ public record NetPrice : NumericSemanticType<decimal>
     public override string ToString() => Value.ToString("c");
 
 
+    public NetPrice Add(NetPrice value) =>
+        new(Value + value.Value);
+
     public GrossPrice Add(Vat vat) =>
         new(Value * (100 + vat.Value) / 100);
+
+    
+    public NetPrice Sub(NetPrice value) =>
+        new(Value - value.Value);
+
+
+    public NetPrice Multiply(decimal multiplicator) =>
+        new(Value * multiplicator);
+
+    public NetPrice Divide(decimal divisor) =>
+        new(Value / divisor);
 }

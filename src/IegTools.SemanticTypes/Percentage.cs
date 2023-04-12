@@ -1,11 +1,9 @@
 ﻿namespace IegTools.SemanticTypes;
 
-using Core;
-
 /// <summary>
 /// Represents any percentage
 /// </summary>
-public record Percentage : NumericSemanticType<double>
+public record Percentage : SemanticType<double>
 {
     public Percentage() : this(0) { }
 

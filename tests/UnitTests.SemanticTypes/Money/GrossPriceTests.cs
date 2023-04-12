@@ -5,15 +5,6 @@ using IegTools.SemanticTypes;
 public class GrossPriceTests
 {
     [Fact]
-    public void Test_default()
-    {
-        var actual = new GrossPrice();
-
-        actual.Value.Should().Be(0);
-    }
-
-
-    [Fact]
     public void Test_Add()
     {
         var actual = new GrossPrice(120).Add(new GrossPrice(20));
@@ -32,7 +23,7 @@ public class GrossPriceTests
     [Fact]
     public void Test_Multiply()
     {
-        var actual = new GrossPrice(120).Multiply<GrossPrice>(2.0m);
+        var actual = new GrossPrice(120).Multiply(2.0m);
 
         actual.Should().Be(new GrossPrice(240));
     }
@@ -40,7 +31,7 @@ public class GrossPriceTests
     [Fact]
     public void Test_Divide()
     {
-        var actual = new GrossPrice(120).Divide<GrossPrice>(2.0m);
+        var actual = new GrossPrice(120).Divide(2.0m);
 
         actual.Should().Be(new GrossPrice(60));
     }

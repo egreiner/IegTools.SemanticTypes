@@ -1,6 +1,6 @@
 namespace UnitTests.SemanticTypes.TestTypes;
 
-using IegTools.SemanticTypes.Core;
+using IegTools.SemanticTypes;
 
 internal record StringSemanticType : SemanticType<string>
 {
