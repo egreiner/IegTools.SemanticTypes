@@ -18,7 +18,8 @@ public class NumericSemanticTypeAnalyzer : DiagnosticAnalyzer
         "TSemanticType should be the same type as NumericSemanticType<TNumber>",
         "NumericSemanticType",
         DiagnosticSeverity.Error,
-        isEnabledByDefault: true);
+        isEnabledByDefault: true,
+        helpLinkUri: "https://docs.example.com/NumericSemanticTypeAnalyzer");
 
     public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
@@ -41,8 +42,7 @@ public class NumericSemanticTypeAnalyzer : DiagnosticAnalyzer
         var typeParameter = methodSymbol.TypeParameters.SingleOrDefault(tp => tp.Name == "TSemanticType");
         if (typeParameter == null) return;
 
-        var constraint = typeParameter.ConstraintTypes.SingleOrDefault(ct => ct is QualifiedNameSyntax qns && qns.Right.Identifier.Text == "NumericSemanticType");
-        ////var constraint = typeParameter.ConstraintTypes.SingleOrDefault(ct => ct is DiagnosticId qns && qns.Right.Identifier.Text == "NumericSemanticType");
+        var constraint = typeParameter.ConstraintTypes.SingleOrDefault(ct => ct.Name == "NumericSemanticType");
         if (constraint != null)
         {
             var diagnostic = Diagnostic.Create(Rule, methodDeclaration.GetLocation());
