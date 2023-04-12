@@ -34,7 +34,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Core\NumericSemanticType.cs" />
 	  <Compile Remove="Test\GrossPrice.cs" />
 	</ItemGroup>
   <ItemGroup>
@@ -62,8 +61,6 @@
 			<Link>LICENSE.txt</Link>
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-		
-		<None Include="Core\NumericSemanticType.cs" />
 		
 		<None Include="Test\GrossPrice.cs" />
 	</ItemGroup>
