@@ -14,6 +14,7 @@ public record GrossPrice : SemanticType<decimal>
     public GrossPrice Add(GrossPrice value) =>
         new(Value + value.Value);
 
+    
     public GrossPrice Sub(GrossPrice value) =>
         new(Value - value.Value);
 
@@ -21,7 +22,7 @@ public record GrossPrice : SemanticType<decimal>
         => new(Value / (100 + vat.Value) * 100);
 
     public Vat Sub(NetPrice netPrice) =>
-        new(Value - netPrice.Value);
+        new((Value - netPrice.Value) / netPrice.Value * 100);
 
 
     public GrossPrice Multiply(decimal multiplicator) =>

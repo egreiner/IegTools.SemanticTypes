@@ -20,6 +20,7 @@ public record Vat : SemanticType<decimal>
     public Vat Sub(Vat value) =>
         new(Value - value.Value);
 
+
     public Vat Multiply(decimal multiplicator) =>
         new(Value * multiplicator);
 
