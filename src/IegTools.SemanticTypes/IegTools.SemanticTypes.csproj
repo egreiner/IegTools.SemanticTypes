@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<LangVersion>latest</LangVersion>
@@ -7,6 +6,7 @@
 
 		<RepositoryUrl>https://github.com/egreiner/IegTools.SemanticTypes</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/egreiner/IegTools.SemanticTypes</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/egreiner/IegTools.SemanticTypes/blob/master/LICENSE.txt</PackageLicenseUrl>
 		<PackageReadme>https://github.com/egreiner/IegTools.SemanticTypes/blob/master/README.md</PackageReadme>
 		<PackageReadmeFile>docs\README.md</PackageReadmeFile>
 		<PackageLicenseFile>docs\LICENSE.txt</PackageLicenseFile>
@@ -22,7 +22,7 @@
 
 		<Description>SemanticTypes is a library that offers a minimalist collection of SemanticTypes, based on record(s) instead of classes.</Description>
 
-		<PackageReleaseNotes>Release Candidate 2 - netstandard2.1</PackageReleaseNotes>
+		<PackageReleaseNotes>netstandard2.0</PackageReleaseNotes>
 
 		<PackageTags>SemanticTypes, DomainSpecificTypes</PackageTags>
 		
@@ -30,8 +30,8 @@
 		<RepositoryType>git</RepositoryType>
 		<UserSecretsId>940bf605-ef83-43f5-9f75-715291de7535</UserSecretsId>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-
 	</PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
@@ -59,5 +59,4 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
-
 </Project>
