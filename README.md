@@ -1,7 +1,7 @@
 # IegTools.SemanticTypes
 
 IegTools.SemanticTypes is a library that offers a minimalist collection of SemanticTypes,
-based on record(s) instead of classes.
+based on record(s) instead of classes.  
 The library is written in C# 11.0 and targets .NET Standard 2.0 (.NET Core and .NET Framework).
 
 

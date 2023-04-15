@@ -4,13 +4,17 @@ using System;
 
 /// <summary>
 /// Represents an percentage value between 0.0% and 100.0%
+/// Inherits from the SemanticType class and uses a double value to store a percentage between 0.0% and 100.0%
 /// </summary>
 public record Percentage0To100 : Percentage
 {
+    /// <summary>
+    /// Creates an instance of <see cref="Percentage0To100"/> with the default value of 0
+    /// </summary>
     public Percentage0To100() : this(0) { }
 
     /// <summary>
-    /// Returns the value as Percentage0To100.
+    /// Creates an instance of <see cref="Percentage0To100"/> with the specified value
     /// </summary>
     /// <param name="value">The Value</param>
     /// <exception cref="ArgumentOutOfRangeException">Throws exception if not within the boundaries 0.0 to 100.0</exception>

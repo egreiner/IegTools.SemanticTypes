@@ -1,4 +1,6 @@
 ﻿namespace System.Runtime.CompilerServices;
 
-// Compiler hack 
+/// <summary>
+/// Compiler hack
+/// </summary>
 public class IsExternalInit { }
