@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IegTools.SemanticTypes", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests.SemanticTypes", "tests\UnitTests.SemanticTypes\UnitTests.SemanticTypes.csproj", "{8C5A7DC5-02A9-4788-90E7-29E4D8FA298A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHubActions", "GitHubActions", "{282D137D-F43B-460C-875C-B733661B9F1E}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\run-tests.yml = .github\workflows\run-tests.yml
+		.github\workflows\run-tests-create-and-push-nuget-package.yml = .github\workflows\run-tests-create-and-push-nuget-package.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
