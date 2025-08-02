@@ -17,39 +17,44 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        dotnet-version: [ '7.0.x' ]
+        dotnet-version: [ '7.0.x', '8.0.x', '9.0.x' ]
         os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
-        uses: actions/setup-dotnet@v2
+      - uses: actions/checkout@v4
+      
+      # Das SDK aus der Matrix aktiv setzen
+      - name: Setup active .NET SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
-      - name: Setup Nuget
-        uses: Nuget/setup-nuget@v1.0.5
+      # Alle SDKs installieren, damit Multi-Targeting (net6/7/8/9) funktioniert
+      - name: Setup additional SDKs for multi-targeting
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            7.0.x
+            8.0.x
+            9.0.x
 
-      - name: Restore nuget packages
-        run: nuget restore 'IegTools.SemanticTypes.sln'     
-        
-      - name: 'Install dependencies'
-        run: dotnet restore  ${{ env.PROJECT_PATH }}
-      
-      - name: 'Build project'
-        run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+      - name: Install dependencies
+        run: dotnet restore
 
-      - name: 'Test project'
+      - name: Build project
+        run: dotnet build --configuration Release --no-restore /p:TreatWarningsAsErrors=false
+
+      - name: Test project
         run: dotnet test --no-restore --verbosity normal
-      
-      - name: 'Get Version'
+
+      - name: Get Version
         uses: bbonkr/get-version-action@v1.0.4
         id: get_version
         with:
           project: ${{ env.PROJECT_PATH }}
-      
-      - name: 'Pack project'
+
+      - name: Pack project
         run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release -p:PackageVersion=${{ steps.get_version.outputs.version }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
-      - name: 'Push package'
+      - name: Push package
         run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg -k ${{ secrets.NUGET_OPEN_SOURCE }} -s ${{ env.NUGET_SOURCE_URL }} --skip-duplicate 
