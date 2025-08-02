@@ -20,9 +20,9 @@
 		<Authors>Ing. Ernst Greiner</Authors>
 		<Copyright>(c) 2025 ieg Systems - Ing. Ernst Greiner</Copyright>
 
-		<Description>SemanticTypes is a library that offers a minimalist collection of SemanticTypes, based on record(s) instead of classes.</Description>
+		<Description>SemanticTypes is a library that provides a minimalist collection of semantic types, implemented as records rather than classes.</Description>
 
-		<PackageReleaseNotes>netstandard2.0</PackageReleaseNotes>
+		<PackageReleaseNotes>Multi-targeting .NET Standard 2.0/2.1 and .NET7.0 - .NET9.0</PackageReleaseNotes>
 
 		<PackageTags>SemanticTypes, DomainSpecificTypes</PackageTags>
 		
