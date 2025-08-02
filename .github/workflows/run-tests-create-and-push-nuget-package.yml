@@ -57,4 +57,4 @@ jobs:
         run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release -p:PackageVersion=${{ steps.get_version.outputs.version }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
       - name: Push package
-        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg -k ${{ secrets.NUGET_OPEN_SOURCE }} -s ${{ env.NUGET_SOURCE_URL }} --skip-duplicate 
+        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}/*.nupkg -k ${{ secrets.github_nuget_open_source }} -s ${{ env.NUGET_SOURCE_URL }} --skip-duplicate 
