@@ -49,4 +49,28 @@ public class IdentityTests
 
         id2.Should().NotBe(id1);
     }
+    
+    [Fact]
+    public void ToString_Should_contain_expected_strings()
+    {
+        const int value = 1;
+        var id = new IdentityValue<int>(value);
+        
+        var actual = id.ToString();
+        
+        actual.Should().Contain(nameof(IdentityValue<int>));
+        actual.Should().Contain(nameof(id.Value));
+        actual.Should().Contain(value.ToString());
+    }
+    
+    [Fact]
+    public void ToString_Should_be_as_expected()
+    {
+        const int value = 1;
+        var id = new IdentityValue<int>(value);
+        
+        var actual = id.ToString();
+        
+        actual.Should().Be("IdentityValue { Value = 1 }");
+    }
 }

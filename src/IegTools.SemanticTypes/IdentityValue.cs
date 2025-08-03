@@ -7,8 +7,4 @@
 /// The underlying value can be of any type, such as int, string, Guid, etc.
 /// The value is immutable and can be used in comparisons and other operations as needed.
 /// </summary>
-public readonly record struct IdentityValue<T>(T Value)
-{
-    /// <inheritdoc />
-    public override string ToString() => Value.ToString();
-}
+public readonly record struct IdentityValue<T>(T Value);
